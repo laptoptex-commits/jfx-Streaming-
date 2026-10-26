@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="Jelajahi film favoritmu di JFLIX+.">
+  <title>JFLIX+ | Movie Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="logo">JF<span>LIX+</span></a>
+    <nav>
+      <a href="#home" class="home-link active">Home</a>
+      <button id="favoritesNav" class="nav-button" type="button">
+        ♥ Favorit
+      </button>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR MOVIE UNIVERSE</span>
+        <h1>Temukan Film <span>Favoritmu.</span></h1>
+        <p>
+          Jelajahi film populer, temukan cerita baru,
+          dan simpan film favoritmu di JFLIX+.
+        </p>
+
+        <form id="searchForm" class="search-form">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Cari judul film..."
+            aria-label="Cari judul film"
+            autocomplete="off"
+          >
+
+          <select id="releaseYear" aria-label="Filter tahun rilis">
+            <option value="">Semua Tahun</option>
+          </select>
+
+          <button type="submit">Cari</button>
+        </form>
+
+        <div class="genre-area">
+          <p class="genre-label">PILIH GENRE FILM</p>
+          <div id="genreFilters" class="genre-filters">
+            <button type="button" class="genre-chip active" data-genre="">
+              Semua
+            </button>
+            <button type="button" class="genre-chip" data-genre="28">💥 Action</button>
+            <button type="button" class="genre-chip" data-genre="35">😂 Komedi</button>
+            <button type="button" class="genre-chip" data-genre="27">👻 Horror</button>
+            <button type="button" class="genre-chip" data-genre="10749">❤️ Romance</button>
+            <button type="button" class="genre-chip" data-genre="16">🎨 Animasi</button>
+            <button type="button" class="genre-chip" data-genre="878">🚀 Sci-Fi</button>
+            <button type="button" class="genre-chip" data-genre="12">🌍 Petualangan</button>
+            <button type="button" class="genre-chip" data-genre="53">🔪 Thriller</button>
+            <button type="button" class="genre-chip" data-genre="18">🎭 Drama</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="collections">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">EXPLORE</span>
+          <h2 id="sectionTitle">Jelajahi Film</h2>
+        </div>
+        <span class="brand-mark">JF<span>+</span></span>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+
+      <div id="movieSections">
+        <section class="movie-section" data-category="trending">
+          <h3>🔥 Trending Minggu Ini</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="popular">
+          <h3>⭐ Film Populer</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="action">
+          <h3>💥 Action</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="comedy">
+          <h3>😂 Komedi</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="horror">
+          <h3>👻 Horror</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="romance">
+          <h3>❤️ Romance</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="animation">
+          <h3>🎨 Animasi</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="science">
+          <h3>🚀 Sci-Fi</h3>
+          <div class="movie-row"></div>
+        </section>
+
+        <section class="movie-section" data-category="top_rated">
+          <h3>🏆 Rating Tertinggi</h3>
+          <div class="movie-row"></div>
+        </section>
+      </div>
+
+      <section id="searchResults" hidden>
+        <div id="searchMovieRow" class="movie-grid"></div>
+        <button id="loadMoreBtn" class="load-more" type="button" hidden>
+          Muat Lebih Banyak
+        </button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="footer-logo">JFLIX<span>+</span></a>
+    <p>Temukan cerita favoritmu, satu film dalam satu waktu.</p>
+    <small>Data film disediakan oleh TMDB. JFLIX+ bukan layanan resmi TMDB.</small>
+  </footer>
+
+  <div id="movieModal" class="modal" hidden>
+    <div
+      id="modalContent"
+      class="modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Detail film"
+    ></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
